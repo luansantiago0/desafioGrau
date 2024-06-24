@@ -42,5 +42,48 @@ Certifique-se de que o ambiente para a API PHP e o banco de dados MySQL utilizan
    ```bash
    npm install
    npm run dev
+   ```
+
+# Configuração da API PHP com Banco de Dados MySQL
+
+Este é um guia básico para configurar a API PHP para se comunicar com o banco de dados MySQL utilizando PDO.
+
+## Requisitos
+
+Antes de começar, certifique-se de ter o seguinte:
+
+- XAMPP ou outro servidor local que inclua PHP e MySQL.
+- Um editor de código (por exemplo, Visual Studio Code, Sublime Text, etc.).
+- Conhecimento básico de PHP e SQL.
+
+## Passos para Configuração
+
+Siga os passos abaixo para configurar sua API PHP para se conectar ao banco de dados MySQL:
+
+### 1. Configuração do Banco de Dados MySQL
+
+- Abra o painel de controle do XAMPP.
+- Inicie o módulo MySQL, se ainda não estiver iniciado.
+- Acesse o phpMyAdmin em seu navegador (geralmente acessível via http://localhost/phpmyadmin/).
+- Crie um novo banco de dados chamado `forca_do_habito` (ou outro nome de sua escolha).
+
+### 2. Configuração do Arquivo de Conexão com o Banco de Dados
+
+Dentro do arquivo chamado `db.php` (ou outro nome de sua escolha) e adicione o seguinte código:
+
+```php
+<?php
+$dsn = 'mysql:host=localhost;dbname=forca_do_habito';
+$username = 'root';
+$password = '';
+
+try {
+    $pdo = new PDO($dsn, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Conexão estabelecida com sucesso!";
+} catch (PDOException $e) {
+    die('Conexão falhou: ' . $e->getMessage());
+}
+?>
    
    
