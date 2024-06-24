@@ -37,4 +37,10 @@ Certifique-se de que o ambiente para a API PHP e o banco de dados MySQL utilizan
 
    ```bash
    git clone https://github.com/luansantiago0/desafioGrau
+   ```
+   ### Dentro da pasta do projeto (front-end) rode os seguintes comandos para instalar e rodar o projeto
+   ```bash
+   npm install
+   npm run dev
+   
    
